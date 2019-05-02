@@ -1,0 +1,47 @@
+[@main]
+⑴.服务器测试中达到28级奖励50万金币 \
+⑵.服务器测试中达到31级奖励100万金币. \
+⑶.服务器测试中达到36级奖励150万金币 \
+例如：测试阶段您申请的游戏帐号为:1234567\
+并且在测试阶段您的等级到达了28 31 36 级\
+那么正式开区后，您只要是申请游戏帐号:1234567\
+即可在我这里领取相应奖励！\
+<{进入领奖界面=FCO=240}/@领取测试奖励a>\
+<结束对话/@exit>\
+
+
+[@领取测试奖励]
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\28级帐号.txt
+#ACT
+DELACCOUNTLIST ..\QuestDiary\28级帐号.txt
+GIVE 金币 [$测试玩家领取金币28级]
+SENDMSG 0 恭喜玩家[<$USERNAME>]领取到[$测试玩家领取金币28级]金币的测试奖励。
+GOTO @所有NPC调用头_返回
+#ELSEACT
+MESSAGEBOX 你的帐号不在测试领奖名单中！
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\31级帐号.txt
+#ACT
+DELACCOUNTLIST ..\QuestDiary\31级帐号.txt
+GIVE 金币 [$测试玩家领取金币31级]
+SENDMSG 0 恭喜玩家[<$USERNAME>]领取到[$测试玩家领取金币31级]金币的测试奖励。
+GOTO @所有NPC调用头_返回
+#ELSEACT
+MESSAGEBOX 你的帐号不在测试领奖名单中！
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\36级帐号.txt
+#ACT
+DELACCOUNTLIST ..\QuestDiary\36级帐号.txt
+GIVE 金币 [$测试玩家领取金币36级]
+SENDMSG 0 恭喜玩家[<$USERNAME>]领取到[$测试玩家领取金币36级]金币的测试奖励。
+GOTO @所有NPC调用头_返回
+#ELSEACT
+MESSAGEBOX 你的帐号不在测试领奖名单中！
+
+
+
+[@领取测试奖励a]
+#IF
+#ACT
+MESSAGEBOX 现在是测试模式不可领取.正式开区后才能领取！

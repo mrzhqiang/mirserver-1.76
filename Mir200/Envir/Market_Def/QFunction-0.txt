@@ -1,0 +1,347 @@
+; 版^本^来^自w^w^w^6^6^8^8^9^8^c^o^m^购 买 版  本  请  联 系  客 服Q Q 2 0  0  8  7 9086≡
+( @@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @getnextpage @getPreviouspage @@InPutString @@useitemname @@InputInteger)
+%100
+
+[@Member]
+#CALL [\\游戏配置\帮助系统\目录.txt] @目录
+
+
+
+[@PlayDie]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CREDITPOINT + 1
+Break
+
+[@KillPlay]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CHANGEGAMEGIRD + 1
+SENDMSG 0 【#6FFFF/8#6新闻#5】：[#7<$USERNAME>#7]真是神功盖世，只使出一招降龙在天，便将#6FFFF/8#6<$STR(S0)>#5斩于刀下！
+Break
+
+
+
+[@StdModeFunc5]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放一心一意烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_一心一意]
+
+[@StdModeFunc6]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放心心相印烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_心心相印]
+
+[@StdModeFunc7]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放飞火流星烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_飞火流星]
+
+[@StdModeFunc8]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放浪漫星雨烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_浪漫星雨]
+
+[@StdModeFunc9]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放绮梦幻想烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_绮梦幻想]
+
+[@StdModeFunc10]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放长空火舞烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_长空火舞]
+
+[@StdModeFunc11]
+#IF
+#ACT
+SENDMSG 0 [#7%s#7]正在%m(%x,%y)放如雾似梦烟花，大家快去看哦！
+SHOWEFFECT [$特效_烟花_如雾似梦]
+
+[@StdModeFunc12]
+#IF
+EQUAL M3 0
+#ACT
+SENDMSG 0 %s在:%m%x:%y处放庆典蛋糕、大家快去欣赏哦。
+
+#IF
+EQUAL M3 5
+#ACT
+SENDMSG 0 %s在:%m%x:%y处放庆典蛋糕、大家快去欣赏哦。
+
+#IF
+EQUAL M3 10
+#ACT
+SENDMSG 0 %s在:%m%x:%y处放庆典蛋糕、大家快去欣赏哦。
+
+#IF
+EQUAL M3 15
+#ACT
+SENDMSG 0 %s在:%m%x:%y处放庆典蛋糕、大家快去欣赏哦。
+
+#IF
+small M3 20
+#Act
+INC M3 1
+SHOWEFFECT [$特效_烟花_一心一意]
+SHOWEFFECT [$特效_烟花_心心相印]
+SHOWEFFECT [$特效_烟花_飞火流星]
+SHOWEFFECT [$特效_烟花_浪漫星雨]
+SHOWEFFECT [$特效_烟花_绮梦幻想]
+SHOWEFFECT [$特效_烟花_长空火舞]
+SHOWEFFECT [$特效_烟花_如雾似梦]
+DelayGoto 2 @StdModeFunc12
+#ELSEAct
+MOV M3 0
+ClearDelayGoto
+
+[@StdModeFunc13]
+#ACT
+CREDITPOINT + 1
+SENDMSG 5 兑换成功！人物增加1点声望，当前声望为：<$CREDITPOINT>
+
+[@StdModeFunc14]
+#ACT
+CREDITPOINT + 5
+SENDMSG 5 兑换成功！人物增加5点声望，当前声望为：<$CREDITPOINT>
+
+[@StdModeFunc15]
+#ACT
+CREDITPOINT + 10
+SENDMSG 5 兑换成功！人物增加10点声望，当前声望为：<$CREDITPOINT>
+
+[@StdModeFunc16]
+#ACT
+CREDITPOINT + 50
+SENDMSG 5 兑换成功！人物增加50点声望，当前声望为：<$CREDITPOINT>
+
+[@StdModeFunc17]
+#ACT
+CREDITPOINT + 100
+SENDMSG 5 兑换成功！人物增加100点声望，当前声望为：<$CREDITPOINT>
+
+[@StdModeFunc18]
+#IF
+#ACT
+mapmove 3 330 330
+
+[@StdModeFunc19]
+#IF
+#ACT
+mapmove 0 334 266
+
+[@StdModeFunc20]
+#IF
+#ACT
+mapmove 5 330 330
+
+[@StdModeFunc21]
+#IF
+#ACT
+mapmove 4 240 200
+
+[@StdModeFunc22]
+#IF
+#ACT
+mapmove 11 178 326
+
+[@StdModeFunc23] 
+#ACT
+GAMEGOLD + 1
+SENDMSG 5 元宝数量增加1个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc24]
+#ACT
+GAMEGOLD + 5
+SENDMSG 5 元宝数量增加5个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc25]
+#ACT
+GAMEGOLD + 10
+SENDMSG 5 元宝数量增加10个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc26]
+#ACT
+GAMEGOLD + 20
+SENDMSG 5 元宝数量增加20个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc27]
+#ACT
+GAMEGOLD + 50
+SENDMSG 5 元宝数量增加50个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc28]
+#ACT
+GAMEGOLD + 100
+SENDMSG 5 元宝数量增加100个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc29]
+#ACT
+GAMEGOLD + 200
+SENDMSG 5 元宝数量增加200个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc30]
+#ACT
+GAMEGOLD + 500
+SENDMSG 5 元宝数量增加500个、目前元宝数:<$GAMEGOLD>个。
+
+[@StdModeFunc31]
+#ACT
+GAMEGOLD + 1000
+SENDMSG 5 元宝数量增加1000个、目前元宝数:<$GAMEGOLD>个。
+
+[@STDMODEFUNC32]
+#IF
+#ACT
+GIVE 升级大礼包 1
+#SAY
+　{升级狂送大礼，各种技能书,金币,药：=FCO=250}\
+　{10级可第1次开启(价值10元宝)=FCO=250}\
+{12=x}{i.330=item}{46=x}{i.339=item}{46=x}{i.459=item}{46=x}{i.331=item}{46=x}{i.320=item}\ \ \
+　{15级可第2次开启(价值20元宝)=FCO=250}\
+{12=x}{i.459=item}{46=x}{i.460=item}{46=x}{46=x}{i.337=item}{46=x}{i.320=item}\ \ \
+　{20级可第3次开启(价值30元宝)=FCO=250}\
+{12=x}{i.459=item}{46=x}{i.460=item}{46=x}{46=x}{i.337=item}{46=x}{i.320=item}\ \ \
+<&{开启礼包，领取奖励=FCO=251}/@开启礼包_检测条件>\
+<&下次再领/@exit>\
+
+[@开启礼包_检测条件]
+#IF
+NOT CHECKBAGSIZE 10
+#ACT
+MESSAGEBOX 背包空间不足，请先清理出10个空位.
+Break
+
+#IF
+CHECKLEVELEX ? 10
+CHECK [778] 0
+#ACT
+set [778] 1
+DYNAMICGIVE 鹤嘴锄 1
+DYNAMICGIVE 特制梳子 1
+DYNAMICGIVE 比奇传送石 1
+DYNAMICGIVE 强效金创药(绑) 1
+DYNAMICGIVE 强效魔法药(绑) 1
+DYNAMICGIVE 心心相印包 1
+CHANGEGIVEITEM 2 0 1
+CHANGEGIVEITEM 2 4 1
+CHANGEGIVEITEM 2 6 1
+CHANGEGIVEITEM 2 7 1
+CHANGEGIVEITEM 8
+close
+SENDMSG 0 【#6FFFF/8#6恭喜#5】：[#7<$USERNAME>#7]打开(10级升级大礼包)获得了传送神石、特制梳子、总价值10元宝的奖励，只要升级垂手可得！
+SENDMSG 8 【#6FFFF/8#6恭喜#5】：#6FFFF/8#6[<$USERNAME>]#5打开(10级升级大礼包)获得了传送神石、特制梳子、总价值10元宝的奖励，只要升级垂手可得！
+MESSAGEBOX 恭喜您成功打开升级礼包，获得了价值10元宝的奖励！您还有2次开启机会。\　\在15级、20级时可继续开启礼包，更有神秘装备大礼相送，一定要加油哦！
+Break
+
+#IF
+CHECKLEVELEX ? 15
+CHECK [778] 1
+CHECK [779] 0
+#ACT
+set [779] 1
+DYNAMICGIVE 随机传送石 1
+DYNAMICGIVE 强效金创药(绑) 1
+DYNAMICGIVE 强效魔法药(绑) 1
+CHANGEGIVEITEM 2 0 1
+CHANGEGIVEITEM 2 4 1
+CHANGEGIVEITEM 2 6 1
+CHANGEGIVEITEM 2 7 1
+CHANGEGIVEITEM 8
+close
+SENDMSG 0 【#6FFFF/8#6恭喜#5】：[#7<$USERNAME>#7]打开(15级升级大礼包)获得了传送神石，只要升级垂手可得！
+SENDMSG 8 【#6FFFF/8#6恭喜#5】：#6FFFF/8#6[<$USERNAME>]#5打开(20级升级大礼包)获得了传送神石、只要升级垂手可得！
+MESSAGEBOX 恭喜您成功打开升级礼包，获得了价值20元宝的奖励！您还有1次开启机会。\　\在20级时可继续开启礼包，价值30元宝的奖励等你拿，一定要继续加油哦！
+Break
+
+#IF
+CHECKLEVELEX ? 20
+CHECK [779] 1
+CHECK [780] 0
+#ACT
+set [780] 1
+DYNAMICGIVE 强效金创药(绑) 1
+DYNAMICGIVE 强效魔法药(绑) 1
+CHANGEGIVEITEM 2 0 1
+CHANGEGIVEITEM 2 4 1
+CHANGEGIVEITEM 2 6 1
+CHANGEGIVEITEM 2 7 1
+CHANGEGIVEITEM 8
+TAKE 升级大礼包 1
+close
+SENDMSG 0 【#6FFFF/8#6恭喜#5】：[#7<$USERNAME>#7]打开(20级升级大礼包)获得了传送神石、总价值30元宝的奖励，只要升级垂手可得！
+SENDMSG 8 【#6FFFF/8#6恭喜#5】：#6FFFF/8#6[<$USERNAME>]#5打开(20级升级大礼包)获得了传送神石、，只要升级垂手可得！
+MESSAGEBOX 恭喜您成功打开升级礼包，获得了价值30元宝的奖励！\　\　　　　您已领取完全部奖励，祝您游戏愉快！\
+Break
+
+#ELSESAY
+　礼包共可开启三次，您暂时未达到领奖\
+等级，无法领取下一阶段升级奖励：\ \
+　{--------------------------------=FCO=249}\
+　①、{10=FCO=250}级第{1=FCO=250}次开启（价值{10=FCO=250}元宝）\
+　②、{15=FCO=250}级第{2=FCO=250}次开启（价值{20=FCO=250}元宝）\
+　③、{20=FCO=250}级第{3=FCO=250}次开启（价值{30=FCO=250}元宝）\
+　{--------------------------------=FCO=249}\ \
+　请您一定要继续加油哦，祝您游戏愉快\ \
+<&好的/@exit>\
+
+
+
+#CALL [\登陆\升级提示.txt] @升级提示
+
+
+[@StdmodeFunc33]
+#if
+CHECKITEMCOUNT 强效太阳水 ? 6
+#act
+TAKECOUNT 强效太阳水 6
+GIVE 打捆强效太阳水 1
+#elseact
+SENDMSG 5 你没有足够多的强效太阳水.
+
+[@StdmodeFunc34]
+#if
+CHECKITEMCOUNT 万年雪霜 ? 6
+#act
+TAKECOUNT 万年雪霜 6
+GIVE 打捆万年雪霜 1
+#elseact
+SENDMSG 5 你没有足够多的万年雪霜.
+
+[@StdmodeFunc35]
+#if
+CHECKITEMCOUNT 疗伤药 ? 6
+#act
+TAKECOUNT 疗伤药 6
+GIVE 打捆疗伤药 1
+#elseact
+SENDMSG 5 你没有足够多的疗伤药.
+
+
+
+[@StdmodeFunc36]
+#if
+#act
+GIVE 金币 1000000
+
+[@StdmodeFunc37]
+#IF
+CHECKBAGSIZE 5
+#ACT
+GIVE 金条 5
+Break
+#ELSEACT
+GIVE 金砖 1
+MESSAGEBOX 你的背包空间不足5个，请先整理一下！
+Break
+
+[@USERCMD10]
+#CALL [\GM管理\GM管理.txt] @GM管理

@@ -1,0 +1,17 @@
+
+[@天下第一]
+#IF
+#ACT
+ClearMapMon PKA11
+SENDMSG 0 ╔═══════════════════╗
+SENDMSG 0 ║　　　　　　　　　　　　　　　　　　　║
+SENDMSG 0 ║　　　　　　　　　　　　　　　　　　　║
+SENDMSG 0 ║　　　　#6FFFF/8#6天下第一活动　正式开始#5　　　　║
+SENDMSG 0 ║　　　　　　　　　　　　　　　　　　　║
+SENDMSG 0 ║　　　　　　　　　　　　　　　　　　　║
+SENDMSG 0 ╚═══════════════════╝
+GMEXECUTE 开始提问 @天下第一活动框
+
+
+
+

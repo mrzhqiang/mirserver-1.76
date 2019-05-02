@@ -1,0 +1,78 @@
+[@换元宝]
+{
+[@main]
+#CALL [\游戏配置\所有NPC调用头.txt] @所有NPC调用头
+
+[@所有NPC调用头_返回]
+{<$SELFNAME>=FCO=251}：\
+在我这里可以用元宝兑换金币也可以用金币兑换元宝\
+<一元宝兑换10000金币/@金币>       <10000金币兑换一元宝/@元宝> \ \
+<十元宝兑换100000金币/@金币1>      <100000金币兑换十元宝/@元宝1>\ \
+<一百元宝兑换1000000金币/@金币2>   <1000000金币兑换一百元宝/@元宝2>\ \
+[@元宝]
+#IF
+Checkgold 10000
+#ACT
+take 金币 10000
+GAMEGOLD + 1
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用金币兑换了元宝！
+BREAK
+#elseact
+messagebox 你没有10000金币!
+BREAK
+[@元宝1]
+#IF
+Checkgold 100000
+#ACT
+take 金币 100000
+GAMEGOLD + 10
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用金币兑换了元宝！
+BREAK
+#elseact
+messagebox 你没有10W金币!
+BREAK
+[@元宝2]
+#IF
+Checkgold 1000000
+#ACT
+take 金币 1000000
+GAMEGOLD + 100
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用金币兑换了元宝！ 
+BREAK
+#elseact
+messagebox 你没有100W金币!
+BREAK
+[@金币1]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+give 金币 100000
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用元宝兑换了金币！
+BREAK
+#elseact
+messagebox 你没有10个元宝!
+BREAK
+[@金币2]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 金币 1000000
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用元宝兑换了金币！
+BREAK
+#elseact
+messagebox 你没有100个元宝!
+BREAK
+[@金币]
+#IF
+CHECKGAMEGOLD > 1
+#ACT
+GAMEGOLD - 1
+give 金币 10000
+SENDMSG 0 恭喜[#7%s#7]在比奇元宝兑换金币处.用元宝兑换了金币！ 
+BREAK
+#elseact
+messagebox 你没有1个元宝!
+BREAK
+}

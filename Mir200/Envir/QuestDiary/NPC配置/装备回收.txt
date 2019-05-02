@@ -1,0 +1,354 @@
+[@装备回收标准配置]
+{
+[@main]
+#CALL [\游戏配置\所有NPC调用头.txt] @所有NPC调用头
+
+[@所有NPC调用头_返回]
+{<$SELFNAME>=FCO=251}：\
+沃码套装价格是5元宝，祖码套装价格是50元宝，\
+赤月套装价格是100元宝,\
+<&元宝回收{武器是双倍=FCO=250}{（沃码套装）=FCO=251}/@回收_130>\
+<&元宝回收{武器是双倍=FCO=250}{（祖码套装）=FCO=251}/@回收_140>\
+<&元宝回收{武器是双倍=FCO=250}{（赤月套装）=FCO=251}/@回收_150>\ \
+<&关闭/@exit>\
+#ACT
+MOV M0 0
+Break
+
+
+
+;__________________________________________________________________________________
+
+[@回收_130]
+#IF
+#SAY
+\ \ \ \ \ \
+　--------------------------------\
+　　{系统正在检测您的背包,请稍等..=FCO=250}\
+　--------------------------------\
+#ACT
+DelayGoto 1 @主宰回收提示
+#IF
+CHECKITEM 幽灵项链 1
+#ACT
+TAKE 幽灵项链 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 幽灵手套 1
+#ACT
+TAKE 幽灵手套 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 龙之戒指 1
+#ACT
+TAKE 龙之戒指 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 生命项链 1
+#ACT
+TAKE 生命项链 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 思贝儿手镯 1
+#ACT
+TAKE 思贝儿手镯 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 红宝石戒指 1
+#ACT
+TAKE 红宝石戒指 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 天珠项链 1
+#ACT
+TAKE 天珠项链 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 心灵手镯 1
+#ACT
+TAKE 心灵手镯 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 铂金戒指 1
+#ACT
+TAKE 铂金戒指 1
+GAMEGOLD + 5
+INC M0 5
+#IF
+CHECKITEM 炼狱 1
+#ACT
+TAKE 炼狱 1
+GAMEGOLD + 10
+INC M0 5
+#IF
+CHECKITEM 魔杖 1
+#ACT
+TAKE 魔杖 1
+GAMEGOLD + 10
+INC M0 5
+#IF
+CHECKITEM 银蛇 1
+#ACT
+TAKE 银蛇 1
+GAMEGOLD + 10
+INC M0 5
+#IF
+CHECKITEM 井中月 1
+#ACT
+TAKE 井中月 1
+GAMEGOLD + 10
+INC M0 5
+#IF
+CHECKITEM 无极棍 1
+#ACT
+TAKE 无极棍 1
+GAMEGOLD + 10
+INC M0 5
+
+[@主宰回收提示]
+#IF
+LARGE M0 0
+#ACT
+SENDMSG 0 【#6FFFF/8#6回收#5】：[#7<$USERNAME>#7]出售#6FFFF/8#6主沃码装备#5赚取了#6FFFF/8#6(<$STR(M0)>)#5元宝！
+Goto @系统_标准NPC头_返回
+#ELSESAY
+\ \
+{装备回收价格：=FCO=243}\
+　--------------------------------\
+<&元宝回收{武器是双倍=FCO=250}{（沃码套装）=FCO=251}/@回收_130>\
+<&元宝回收{武器是双倍=FCO=250}{（祖码套装）=FCO=251}/@回收_140>\
+<&元宝回收{武器是双倍=FCO=250}{（赤月套装）=FCO=251}/@回收_150>\ \
+　--------------------------------\ \
+<&返回主菜单/@系统_标准NPC头_返回>\
+<&关闭/@exit>\
+
+
+;__________________________________________________________________________________
+
+[@回收_140]
+#IF
+#SAY
+\ \ \ \ \ \
+　--------------------------------\
+　　{系统正在检测您的背包,请稍等..=FCO=250}\
+　--------------------------------\
+#ACT
+DelayGoto 1 @传奇回收提示
+#IF
+CHECKITEM 裁决之杖 1
+#ACT
+TAKE 裁决之杖 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 骨玉权杖 1
+#ACT
+TAKE 骨玉权杖 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 龙纹剑 1
+#ACT
+TAKE 龙纹剑 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 黑铁头盔 1
+#ACT
+TAKE 黑铁头盔 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 绿色项链 1
+#ACT
+TAKE 绿色项链 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 恶魔铃铛 1
+#ACT
+TAKE 恶魔铃铛 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 灵魂项链 1
+#ACT
+TAKE 灵魂项链 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 骑士手镯 1
+#ACT
+TAKE 骑士手镯 1
+GAMEGOLD + 50
+CHANGEEXP + 60000
+INC M0 50
+#IF
+CHECKITEM 阎罗手套 1
+#ACT
+TAKE 阎罗手套 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 龙之手镯 1
+#ACT
+TAKE 龙之手镯 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 三眼手镯 1
+#ACT
+TAKE 三眼手镯 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 力量戒指 1
+#ACT
+TAKE 力量戒指 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 紫碧螺 1
+#ACT
+TAKE 紫碧螺 1
+GAMEGOLD + 50
+INC M0 50
+#IF
+CHECKITEM 泰坦戒指 1
+#ACT
+TAKE 泰坦戒指 1
+GAMEGOLD + 50
+INC M0 50
+
+[@传奇回收提示]
+#IF
+LARGE M0 0
+#ACT
+SENDMSG 0 【#6FFFF/8#6回收#5】：[#7<$USERNAME>#7]出售#6FFFF/8#6祖码装备#5赚取了#6FFFF/8#6(<$STR(M0)>)#5元宝！
+Goto @系统_标准NPC头_返回
+#ELSESAY
+\ \
+{装备回收价格：=FCO=243}\
+　--------------------------------\
+<&元宝回收{武器是双倍=FCO=250}{（沃码套装）=FCO=251}/@回收_130>\
+<&元宝回收{武器是双倍=FCO=250}{（祖码套装）=FCO=251}/@回收_140>\
+<&元宝回收{武器是双倍=FCO=250}{（赤月套装）=FCO=251}/@回收_150>\ \
+　--------------------------------\ \
+<&返回主菜单/@系统_标准NPC头_返回>\
+<&关闭/@exit>\
+
+
+;__________________________________________________________________________________
+
+[@回收_150]
+#IF
+#SAY
+\ \ \ \ \ \
+　--------------------------------\
+　　{系统正在检测您的背包,请稍等..=FCO=250}\
+　--------------------------------\
+#ACT
+DelayGoto 1 @玉兔回收提示
+#IF
+CHECKITEM 圣战头盔 1
+#ACT
+TAKE 圣战头盔 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 圣战项链 1
+#ACT
+TAKE 圣战项链 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 圣战手镯 1
+#ACT
+TAKE 圣战手镯 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 圣战戒指 1
+#ACT
+TAKE 圣战戒指 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 法神头盔 1
+#ACT
+TAKE 法神头盔 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 法神项链 1
+#ACT
+TAKE 法神项链 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 法神手镯 1
+#ACT
+TAKE 法神手镯 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 法神戒指 1
+#ACT
+TAKE 法神戒指 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 天尊头盔 1
+#ACT
+TAKE 天尊头盔 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 天尊项链 1
+#ACT
+TAKE 天尊项链 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 天尊手镯 1
+#ACT
+TAKE 天尊手镯 1
+GAMEGOLD + 100
+INC M0 100
+#IF
+CHECKITEM 天尊戒指 1
+#ACT
+TAKE 天尊戒指 1
+GAMEGOLD + 100
+INC M0 100
+[@玉兔回收提示]
+#IF
+LARGE M0 0
+#ACT
+SENDMSG 0 【#6FFFF/8#6回收#5】：[#7<$USERNAME>#7]出售#6FFFF/8#6赤月装备#5赚取了#6FFFF/8#6(<$STR(M0)>)#5元宝和！
+Goto @系统_标准NPC头_返回
+#ELSESAY
+\ \
+{装备回收价格：=FCO=243}\
+　--------------------------------\
+<&元宝回收{武器是双倍=FCO=250}{（沃码套装）=FCO=251}/@回收_130>\
+<&元宝回收{武器是双倍=FCO=250}{（祖码套装）=FCO=251}/@回收_140>\
+<&元宝回收{武器是双倍=FCO=250}{（赤月套装）=FCO=251}/@回收_150>\ \
+　--------------------------------\ \
+<&返回主菜单/@系统_标准NPC头_返回>\
+<&关闭/@exit>\
+
+
+
+;__________________________________________________________________________________
+
+
+}

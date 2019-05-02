@@ -1,0 +1,157 @@
+[@Login]
+#CALL [\登陆\禁止登陆.txt] @禁止登陆
+#CALL [\登陆\沙城主.txt] @沙城主
+#CALL [\登陆\公告设置.txt] @公告
+#CALL [\登陆\经验设置.txt] @经验
+#CALL [\称号管理\称号管理.txt] @称号管理
+#IF
+#ACT
+DELAYGOTO 0 @延时检测管理员
+DELAYGOTO 1 @新人登陆
+
+[@延时检测管理员]
+#if
+ISADMIN
+#act
+CHANGEPERMISSION 0
+goto @检测管理员IP
+
+[@检测管理员IP]
+#IF
+checkiplist ../QuestDiary/数据/管理员ip.txt
+#act
+CHANGEPERMISSION 10
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+;SENDMSG 5 [提示]：您当前登陆IP成功通过系统验证，欢迎您登陆，管理员！
+;SENDMSG 7 提示：当前在线人数:<$USERCOUNT>人.管理游戏请输入[@后台管理]!
+#elseact
+SENDMSG 5 [提示]：非法登陆，此账号当前登陆IP没有在系统许可范围内，验证失败，请联系管理员！
+KICK
+
+[@新人登陆]
+#IF
+ISNEWHUMAN
+#ACT
+#ELSEACT
+BREAK
+
+
+#IF
+GENDER MAN
+#ACT
+GIVE 升级大礼包 1
+GIVE 强效太阳包(绑) 5
+GIVE 布衣(男) 1 TAKEON
+GIVE 木剑 1 TAKEON
+SHOWEFFECT [$特效_烟花_一心一意]
+SENDMSG 0 [系统]：复古2003欢迎英俊潇洒的玩家[#7%s#7]进入[$游戏名称]。
+#ELSEACT
+GIVE 升级大礼包 1
+GIVE 强效金创药(绑) 1
+GIVE 强效魔法药(绑) 1
+GIVE 强效太阳包(绑) 5
+GIVE 布衣(女) 1 TAKEON
+GIVE 木剑 1 TAKEON
+SHOWEFFECT [$特效_烟花_一心一意]
+SENDMSG 0 [系统]：复古2003欢迎千娇百媚的玩家[#7%s#7]进入[$游戏名称]。
+
+
+
+
+
+[@天下第一活动框]
+#IF
+NOT CHECKLEVEL 100
+#ACT
+Break
+
+#IF
+#SAY
+------------------------------------\
+　每天12、19、点\
+举行天下第一全服争霸赛。\ \
+　比赛中禁止吃药，持续20分钟，届时\
+场地剩最后一人为获胜者。\ \
+　为增加乐趣，比赛途中场地内还刷新\
+超级BOSS天下神龙。\ \
+　获胜者将获得：金币，庆典蛋糕5个！\ \
+　　　　　　　　{╔════════╗=FCO=251}\
+　　　　　　　　{║=FCO=251}<轮到劳资去挑战了/@天下第一_参加>{║=FCO=251}\
+　　　　　　　　{╚════════╝=FCO=251}\ \
+------------------------------------\
+　（每天12~19单数整点，该活动共2次）\
+#ACT
+DelayGoto 15 @关闭对话框
+Break
+
+[@天下第一_参加]
+#IF
+hour 11 11
+min 0 19
+#ACT
+MAPMOVE PKA11
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了11点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 13 13
+min 0 19
+#ACT
+MAPMOVE PKA13
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了13点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 15 15
+min 0 19
+#ACT
+MAPMOVE PKA15
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了15点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 17 17
+min 0 19
+#ACT
+MAPMOVE PKA17
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了17点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 19 19
+min 0 19
+#ACT
+MAPMOVE PKA19
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了19点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 23 23
+min 0 19
+#ACT
+MAPMOVE PKA23
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了23点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#IF
+hour 1 1
+min 0 19
+#ACT
+MAPMOVE PKA01
+SENDMSG 0 【#6FFFF/8#6活动#5】：勇士[#7<$USERNAME>#7]参加了1点的#6FFFF/8#6天下第一争霸赛#5，请从#6FFFF/8#6土城(341,328)#5参加！
+Break
+
+#ELSEACT
+Close
+MESSAGEBOX 每天12、19、点为活动时间！\　\　　（现在不是活动时间或活动已经结束）\
+Break
+
+[~Initialize]
+#IF
+EQUAL G101 11
+#ACT
+MOV G101  10
+#elseact
+MOV G101  1
