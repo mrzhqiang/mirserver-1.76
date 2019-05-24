@@ -119,7 +119,7 @@ GoldName=金币
 BindGoldName=绑定金币
 GamePointName=点卷
 [Setup]
-ItemNumber=10000
+ItemNumber=10087
 ItemNumberEx=2000000000
 ClientFile1=mir.1
 ClientFile2=mir.2
